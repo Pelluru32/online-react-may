@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 700px;
+            height: 400px;
+            background-color: darkslategrey;
+            border: 1px solid transparent;
+            overflow: auto;
+        }
+        .container div{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(143, 158, 158);
+            text-align: center;
+            line-height: 100px;
+            margin: 5px;
+            float: left;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        var count = 1;
+        var container;
+        var buttons;
+        function init(){
+            container = document.getElementsByClassName("container")[0];
+            buttons = document.getElementsByTagName("button");
+            buttons[0].addEventListener("click", addBoxHandler);
+            buttons[1].addEventListener("click", removeBoxHandler);
+            container.addEventListener("click", removeSelectedBoxHandler);
+        }
+        function removeBoxHandler(){
+            var box = container.firstChild;
+            if(box){
+                container.removeChild(box);
+                count--;
+            }else{
+                alert("nothing to remove")
+            }
+        }
+        function addBoxHandler(){
+            var box = document.createElement("div");
+                box.innerText = count;
+               // box.addEventListener("click", removeSelectedBoxHandler);
+            container.appendChild(box);
+            count++;
+        }
+        function removeSelectedBoxHandler(evt){
+            var box = evt.target;
+            if(evt.target.getAttribute("class") !== 'container'){
+                container.removeChild(box);
+            }else{
+                alert("you clicked on the container");
+            }
+        }
+        addEventListener("load", init);
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Remove Box</button>
+    <hr>
+    <div class="container"></div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init(){
+            document.getElementsByTagName("h1")[1].textContent = "Welcome to your life";
+        };
+        // window.addEventListener("load", init);
+
+       // console.log(document.getElementsByTagName("body")[0]);
+       // window.onload = init;
+       // onload = init;
+       document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<!-- <body onload="init()"> -->
+<body>
+    <h1>1</h1>
+    <h1>2</h1>
+    <h1>3</h1>
+    <h1>4</h1>
+<!--     
+    <script>
+        init();
+    </script> 
+-->
+</body>
+</html>
+
+<!--
+    create 3 functions
+    call them fun1, fun2 and fun3
+    call fun1 on body onload
+    call fun2 on window.addEventListener load
+    call fun3 on document.addEventListener DOMContentLoaded 
+
+    and findout which of these functions was called 1st
+-->
