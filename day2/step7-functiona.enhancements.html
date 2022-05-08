@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Features</title>
+    <script>
+        /* function calculatePower(power1, power2){
+            var pow1 = power1 || 0;
+            var pow2 = power2 || 0;
+            return pow1 + pow2;
+        }; */
+        
+        // default parameters
+        /*
+        function calculatePower(power1 = 0, power2 = 0){
+            return power1 + power2;
+        };
+        
+        console.log(calculatePower(8));
+        */
+
+        /* function calculatePower(){
+            var total = 0;
+            for(var i = 0; i < arguments.length; i++){
+                total += arguments[i];
+            }
+            return total;
+        };
+        
+        console.log(calculatePower(8));
+        console.log(calculatePower(8,9));
+        console.log(calculatePower(8,9,10));
+        console.log(calculatePower(8,9,10,11)); */
+
+        // Rest Parameters / Rest Arguments
+       /*  function calculatePower(...powers){
+            var total = 0;
+            for(var i = 0; i < powers.length; i++){
+                total += powers[i];
+            }
+            return total;
+        };
+        
+        console.log(calculatePower(8));
+        console.log(calculatePower(8,9));
+        console.log(calculatePower(8,9,10));
+        console.log(calculatePower(8,9,10,11)); */
+
+        function calculatePower(...powers){
+            var total = 0;
+            for(var i = 0; i < powers.length; i++){
+                total += powers[i];
+            }
+            return total;
+        };
+        var power = [8,9,10,11];
+        // console.log(calculatePower(power[0],power[1],power[2],power[3]));
+        // spread syntax
+        console.log(calculatePower(...power));
+
+        /*
+
+        */
+       var hero = {
+           title : "Ironman",
+           firstname : "Tony",
+           lastname : "Stark"
+       };
+
+       var firsthero = {...hero};
+       console.log(firsthero);
+       firsthero.title = "Ironmonger";
+       console.log(firsthero);
+       console.log(hero);
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
