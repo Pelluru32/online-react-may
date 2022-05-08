@@ -8,7 +8,7 @@
     <script>
         let promise = new Promise(function(resolve, reject){
             setTimeout(function(){
-                let promisekept = false;
+                let promisekept = true;
                 if(promisekept){
                     resolve("Success Resolve message from promise");
                 }else{
@@ -19,19 +19,29 @@
 // then can take both success and error
 // catch can take error
 // finally takes no argument
-        promise.then(
-            function(res){
-                console.log(res);
-            }
-        ).catch(
-            function(err){
-                console.log(err)
-            }
-        ).finally(
-            function(){
-                console.log("the promise is complete")
-            }
-        )
+        promise
+                .then(
+                    function (res) {
+                        console.log(res);
+                        return res.toUpperCase();
+                    })
+                .then(
+                    function (res) {
+                        console.log(res);
+                        return res.toLowerCase();
+                    })
+                .then(
+                    function (res) {
+                        console.log(res);
+                    })
+                .catch(function (err) {
+                    console.log(err)
+                })
+                .finally(
+                    function () {
+                        console.log("the promise is complete")
+                    }
+                )
     </script>
 </head>
 <body>
