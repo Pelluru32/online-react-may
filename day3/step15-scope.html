@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var ironman = {
+            firstname : "Tony",
+            lastname : "Stark",
+            fullname : function(...args){
+                return this.firstname+" "+this.lastname+" says "+args[0]+" from "+args[1];
+            }
+        };
+        var spiderman = {
+            firstname : "Peter",
+            lastname : "Parker"
+        };
+        var captainamerica = {
+            firstname : "Steve",
+            lastname : "Rogers"
+        };
+        var hulk = {
+            firstname : "Bruce",
+            lastname : "Benner"
+        };
+
+        // var hulkcontext = ironman.fullname.bind(hulk);
+
+        // console.log(ironman.fullname());
+        // console.log(ironman.fullname.call(spiderman));
+        // console.log(ironman.fullname.apply(captainamerica));
+        // console.log(ironman.fullname.bind(hulk)());
+        // console.log(hulkcontext());
+
+        console.log(ironman.fullname('I am Ironman', 'New York'));
+        console.log(ironman.fullname.call(spiderman, "I am Spiderman", "New York"));
+        var params = ["I am Captain America", "Brooklyn"];
+        console.log(ironman.fullname.apply(captainamerica,params));
+        var hulkcontext = ironman.fullname.bind(hulk);
+        console.log(hulkcontext("I am Hulk", "Ohio"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
