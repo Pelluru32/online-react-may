@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            /*  
+            var elm = document.createElement("h1");
+                elm.innerHTML = "Welcome to your life";
+            document.getElementById("root").appendChild(elm); 
+            */
+            var list = document.createElement("ol");
+                list.type = "i"
+            var listItem1 = document.createElement("li");
+                listItem1.innerText = "List Item 1";
+            var listItem2 = document.createElement("li");
+                listItem2.innerText = "List Item 2";
+            var listItem3 = document.createElement("li");
+                listItem3.innerText = "List Item 3";
+            var listItem4 = document.createElement("li");
+                listItem4.innerText = "List Item 4";
+            var listItem5 = document.createElement("li");
+                listItem5.innerText = "List Item 5";
+            list
+            .appendChild(listItem1)
+            .appendChild(listItem2)
+            .appendChild(listItem3)
+            .appendChild(listItem4)
+            .appendChild(listItem5);
+                
+            document.getElementById("root").appendChild(list); 
+        })
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

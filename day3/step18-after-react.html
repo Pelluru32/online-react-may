@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border:  5px solid red;
+        }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>  
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        // var elm = React.createElement("h1", null, "Welcome to your life");
+        
+        document.addEventListener("DOMContentLoaded", function(){
+        /*  
+            ReactDOM.render(elm, document.getElementById("root")); */
+           
+          
+           /*  
+           var list = document.createElement("ol");
+                list.type = "i"
+            var listItem1 = document.createElement("li");
+                listItem1.innerText = "List Item 1";
+            var listItem2 = document.createElement("li");
+                listItem2.innerText = "List Item 2";
+            var listItem3 = document.createElement("li");
+                listItem3.innerText = "List Item 3";
+            var listItem4 = document.createElement("li");
+                listItem4.innerText = "List Item 4";
+            var listItem5 = document.createElement("li");
+                listItem5.innerText = "List Item 5";
+            list
+            .appendChild(listItem1)
+            .appendChild(listItem2)
+            .appendChild(listItem3)
+            .appendChild(listItem4)
+            .appendChild(listItem5);
+            document.getElementById("root").appendChild(list); 
+            */
+
+            var elm = React.createElement("ol", { type : "A", class : 'box' }, 
+                React.createElement("li", null, "List Item 1"),
+                React.createElement("li", null, "List Item 2"),
+                React.createElement("li", null, "List Item 3"),
+                React.createElement("li", null, "List Item 4"),
+                React.createElement("li", null, "List Item 5")
+            );
+            ReactDOM.render(elm, document.getElementById("root"));
+        })
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
